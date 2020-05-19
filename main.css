@@ -312,6 +312,8 @@ canvas {
 
 }
 
+
+
 #counter{
     color:  #FFA500;
     font-family : monospace;
@@ -327,8 +329,12 @@ canvas {
     -ms-user-select: none;
 
 
+}
 
-
+#pbox{
+    color:  #FFA500;
+    font-family : monospace;
+    background-color: rgb(72, 72, 72); /* Green */
 
 
 }

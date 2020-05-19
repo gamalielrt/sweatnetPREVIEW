@@ -22,18 +22,16 @@
     <title>sweatnet.net PREVIEW</title>
     <link rel="stylesheet" href="main.css">
 
-    <!—- ShareThis BEGIN -—>
-    <!--<div hidden id = "shareoverlay"><script hidden src="https://platform-api.sharethis.com/js/sharethis.js#property=5ebc350b5e01a80012b94f91&product=sticky-share-buttons"></script></div>-->
-    <!—- ShareThis END -—>
-
 </head>
 <body>
     <div id="overlay">
         <label id="introtext"> </label><label id = "underscore">_</label><br>
         <label id="introtext2"> </label><label id = "underscore2"></label>
+        <input id="pbox" hidden>
+        <label id="underflashbox"></label>
 
         <label hidden id="buttonHide">
-            <button  id="startButton" >[enter]</button>
+            <button  id="startButton" >[Submit]</button>
 
         </label>
     </div>
@@ -202,7 +200,7 @@
             var iiii = 0;
 
             var introTxt = 'Console: Secure Connection Established /// <[STROBE WARNING]>';
-            var introTxt2 =  'Click enter to start...'; 
+            var introTxt2 =  'Please enter password :'; 
             var lineonedone = false;
 
             var introTypeSpeed = 40; /* The speed/duration of the effect in milliseconds */
@@ -233,7 +231,11 @@
                 }
             }
             function underFlash() {
-                if (iii <= flashSpeed){
+                document.getElementById("underscore2").innerHTML = "";
+                document.getElementById("pbox").style.display = "block";
+
+
+                /*if (iii <= flashSpeed){
                             document.getElementById("underscore2").innerHTML = "_";
                             iii++;
                             //console.log(iii)
@@ -248,7 +250,7 @@
 
                         } if (iii >= upperFlashSpeed){
                             iii = 0;
-                        }
+                        }*/
                         
 
             }
@@ -394,7 +396,6 @@
         pivot, fancase1mtl, fancase1mesh, fan1mtl, fan1mesh, fan1, loadingtextmesh;
         
 
-        var password = "";
         var meshFloor;
         var onHandset = true;
         var keyboard = {};
@@ -412,6 +413,7 @@
         var spotLightdistance = 0;
         var spotLightdecay = 0;
         var count1 = {var:0};
+        var wd = "drinkdrive";
         var startfan = false;
         var fan1parent = new THREE.Group();
         var fan1parent1 = new THREE.Group();
@@ -2001,8 +2003,8 @@
     var startButton = document.getElementById( 'startButton' );
         //startButton.style.display = "none";
 		startButton.addEventListener( 'click', function () {
-                //var inputpassword = document.getElementById("myPwd").value;
-                //if (inputpassword == password) {
+                var intext = document.getElementById("pbox").value;
+                if (intext == wd) {
                     var loadingtext = document.getElementById( 'loadingtext' );
                     loadingtext.style.display = "block";
                     document.getElementById("underscore2").innerHTML = "";
@@ -2020,7 +2022,7 @@
                     
 		            //animate();
 
-                //};
+                };
     	}, false );
             //window.onload = init;
 
